@@ -11,12 +11,12 @@ def ask_question(question):
         [doc.page_content for doc in docs]
     )
     prompt = f"""
-Answer the question using ONLY the provided context.
-Context:
-{context}
-Question:
-{question}
-Answer:
-"""
+    Answer the question using ONLY the provided context.
+    Context:
+    {context}
+    Question:   
+    {question}
+    Answer:
+    """
     response = llm.invoke(prompt)
     return response.content
