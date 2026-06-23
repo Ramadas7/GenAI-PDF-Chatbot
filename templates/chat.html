@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with Document</title>
+</head>
+<body>
+    <h1>💬 Chat with Document</h1>
+    <form method="POST">
+        <input
+            type="text"
+            name="question"
+            placeholder="Ask a question..."
+            style="width:500px;"
+            required
+        >
+        <button type="submit">
+            Ask
+        </button>
+    </form>
+    <hr>
+    <h3>Answer:</h3>
+    <p>{{ answer }}</p>
+    <h3>Sources:</h3>
+    <ul>
+        {% for source in sources %}
+            <li>{{ source }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+
+    <h3>Previous Chats</h3>
+    <ul>
+        {% for chat in chat_history %}
+            <li>
+                {{ chat[0] }}
+            </li>
+        {% endfor %}
+</ul>
+</body>
+</html>
